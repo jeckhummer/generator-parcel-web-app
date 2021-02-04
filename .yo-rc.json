@@ -1,0 +1,9 @@
+{
+    "generator-node": {
+        "promptValues": {
+            "authorName": "Vasilyev Maksim",
+            "authorEmail": "vasilyev.maksim93@gmail.com",
+            "authorUrl": ""
+        }
+    }
+}
