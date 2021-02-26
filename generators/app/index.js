@@ -35,22 +35,24 @@ module.exports = class extends Generator {
         this.fs.copyTpl(
             this.templatePath("**/*"),
             this.destinationPath(this.props.appName),
-            this.props
+            this.props,
+            null,
+            { globOptions: { dot: true } }
         );
     }
 
     install() {
-        this.yarnInstall(
-            ["react", "react-dom", "react-router-dom", "typescript"],
-            { cwd: this.props.appName }
-        );
+        this.yarnInstall(["react", "react-dom", "react-router-dom"], {
+            cwd: this.props.appName
+        });
 
         this.yarnInstall(
             [
                 "@types/qs",
                 "@types/react",
                 "@types/react-dom",
-                "@types/react-router-dom"
+                "@types/react-router-dom",
+                "typescript"
             ],
             {
                 dev: true,
